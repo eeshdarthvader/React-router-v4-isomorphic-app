@@ -654,6 +654,11 @@ app.get('/cool', function (request, response) {
     response.send((0, _coolAsciiFaces2.default)());
 });
 
+app.get('*.js', function (req, res) {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+});
+
 app.get('/api/matches/:id', function (req, res) {
 
     var id = req.params.id;
