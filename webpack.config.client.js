@@ -64,8 +64,7 @@ module.exports = {
       evaluate: true,
       if_return: true,
       join_vars: true
-    },
-    sourceMap: devTools && (devTools.indexOf("sourcemap") >= 0 || devTools.indexOf("source-map") >= 0)
+    }
   }),
       new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.optimize.AggressiveMergingPlugin()
@@ -94,8 +93,8 @@ module.exports = {
 	        loader: "file-loader" 
 	      },
 	      { 
-	       	test: /\.(jpe?g|png|gif|svg)$/i, 
-	       	loader: "file-loader?name=/public/images/[name].[ext]"
+	       	test: /\.(jpe?g|png|gif|svg|ico)$/i, 
+	       	loader: "file-loader?name=/[name].[ext]"
 	      },
 	      {
 	        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
@@ -115,6 +114,6 @@ module.exports = {
 	      }
 	    ]
     },
-    devtool: 'source-map'
+    devtool: 'cheap-module-source-map'
 };
 

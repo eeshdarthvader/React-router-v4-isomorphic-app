@@ -19964,7 +19964,7 @@ var Home = function Home() {
   return _react2.default.createElement(
     'h1',
     { style: style },
-    _react2.default.createElement('img', { src: 'http://cdn1.thecomeback.com/wp-content/uploads/sites/94/2013/08/epl.jpg' })
+    _react2.default.createElement('img', { src: '/images/epl.jpeg' })
   );
 };
 

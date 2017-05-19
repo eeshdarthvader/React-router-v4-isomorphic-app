@@ -13,7 +13,7 @@ export default (renderMe, gists,players='') => `<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <title>Universal React Router 4 Demo</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
         <style>
             body {
                 font-family: Helvetica Neue, Arial, sans-serif;

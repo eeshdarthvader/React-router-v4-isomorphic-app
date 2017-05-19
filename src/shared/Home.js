@@ -17,7 +17,7 @@ const style = {
 
 const Home = () => {
 
-	return(<h1 style={style}><img src="http://cdn1.thecomeback.com/wp-content/uploads/sites/94/2013/08/epl.jpg" /></h1>);
+	return(<h1 style={style}><img src="/images/epl.jpeg" /></h1>);
 }
 
 export default Home;

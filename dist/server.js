@@ -287,7 +287,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 exports.default = function (renderMe, gists) {
     var players = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Universal React Router 4 Demo</title>\n        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />\n        <style>\n            body {\n                font-family: Helvetica Neue, Arial, sans-serif;\n                margin: 0;\n            }\n            html { box-sizing: border-box; }\n            *, *:before, *:after { box-sizing: inherit; }\n        </style>\n    </head>\n    <body>\n        <div id="app">' + (0, _server.renderToString)(renderMe) + '</div>\n        ' + (gists ? '\n            <script>window.__gists__ = ' + JSON.stringify(gists) + ';</script>\n            <script>window.__players__ = ' + JSON.stringify(players) + ';</script>\n            <script src="/static/client.min.js"></script>\n        ' : '') + '\n    </body>\n</html>';
+    return '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Universal React Router 4 Demo</title>\n        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />\n        <style>\n            body {\n                font-family: Helvetica Neue, Arial, sans-serif;\n                margin: 0;\n            }\n            html { box-sizing: border-box; }\n            *, *:before, *:after { box-sizing: inherit; }\n        </style>\n    </head>\n    <body>\n        <div id="app">' + (0, _server.renderToString)(renderMe) + '</div>\n        ' + (gists ? '\n            <script>window.__gists__ = ' + JSON.stringify(gists) + ';</script>\n            <script>window.__players__ = ' + JSON.stringify(players) + ';</script>\n            <script src="/static/client.min.js"></script>\n        ' : '') + '\n    </body>\n</html>';
 };
 
 /***/ }),
@@ -658,6 +658,8 @@ _sourceMapSupport2.default.install();
 var app = (0, _express2.default)();
 app.use('/static', expressStaticGzip('./dist'));
 
+app.use('/images', expressStaticGzip('./dist/images'));
+
 app.get('/cool', function (request, response) {
     response.send((0, _coolAsciiFaces2.default)());
 });
@@ -770,7 +772,7 @@ var Home = function Home() {
   return _react2.default.createElement(
     'h1',
     { style: style },
-    _react2.default.createElement('img', { src: 'http://cdn1.thecomeback.com/wp-content/uploads/sites/94/2013/08/epl.jpg' })
+    _react2.default.createElement('img', { src: '/images/epl.jpeg' })
   );
 };
 

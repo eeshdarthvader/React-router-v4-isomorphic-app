@@ -40,6 +40,8 @@ sourceMapSupport.install();
 const app = express();
 app.use('/static', expressStaticGzip('./dist'));
 
+app.use('/images', expressStaticGzip('./dist/images'));
+
 app.get('/cool', function(request, response) {
   response.send(cool());
 });

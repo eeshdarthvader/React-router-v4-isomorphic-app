@@ -15,6 +15,7 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import { Routes } from '../shared/Routes';
 import { matchRoutes, renderRoutes } from 'react-router-config'
 
+
 render((
     <Router>
         <App gists={window.__gists__} players={window.__players__}/>
