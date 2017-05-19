@@ -21,6 +21,7 @@ import renderPlayers from './renderPlayers';
 import fetch from 'node-fetch';
 import { renderToString } from 'react-dom/server';
 import cool from 'cool-ascii-faces';
+var expressStaticGzip = require("express-static-gzip");
 
 
 import { matchRoutes, renderRoutes } from 'react-router-config'
@@ -37,7 +38,7 @@ const routes = [
 sourceMapSupport.install();
 
 const app = express();
-app.use('/static', express.static('./dist'));
+app.use('/static', expressStaticGzip('./dist'));
 
 app.get('/cool', function(request, response) {
   response.send(cool());

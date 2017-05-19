@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -95,7 +95,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(21);
+var _propTypes = __webpack_require__(22);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -338,15 +338,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Sidebar = __webpack_require__(19);
+var _Sidebar = __webpack_require__(20);
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-var _SidebarItem = __webpack_require__(20);
+var _SidebarItem = __webpack_require__(21);
 
 var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
 
-var _Main = __webpack_require__(18);
+var _Main = __webpack_require__(19);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -354,11 +354,11 @@ var _Gist = __webpack_require__(2);
 
 var _Gist2 = _interopRequireDefault(_Gist);
 
-var _Home = __webpack_require__(17);
+var _Home = __webpack_require__(18);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
 var _reactBootstrap = __webpack_require__(3);
 
@@ -546,34 +546,40 @@ module.exports = require("express");
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("node-fetch");
+module.exports = require("express-static-gzip");
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("node-fetch");
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-router");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = require("source-map-support");
+module.exports = require("react-router-config");
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("url-pattern");
+module.exports = require("source-map-support");
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("url-pattern");
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -603,9 +609,9 @@ var _Error = __webpack_require__(7);
 
 var _Error2 = _interopRequireDefault(_Error);
 
-var _reactRouter = __webpack_require__(12);
+var _reactRouter = __webpack_require__(13);
 
-var _sourceMapSupport = __webpack_require__(14);
+var _sourceMapSupport = __webpack_require__(15);
 
 var _sourceMapSupport2 = _interopRequireDefault(_sourceMapSupport);
 
@@ -617,7 +623,7 @@ var _renderPlayers = __webpack_require__(5);
 
 var _renderPlayers2 = _interopRequireDefault(_renderPlayers);
 
-var _nodeFetch = __webpack_require__(11);
+var _nodeFetch = __webpack_require__(12);
 
 var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
@@ -627,28 +633,30 @@ var _coolAsciiFaces = __webpack_require__(9);
 
 var _coolAsciiFaces2 = _interopRequireDefault(_coolAsciiFaces);
 
-var _reactRouterConfig = __webpack_require__(13);
+var _reactRouterConfig = __webpack_require__(14);
 
-var _urlPattern = __webpack_require__(15);
+var _urlPattern = __webpack_require__(16);
 
 var _urlPattern2 = _interopRequireDefault(_urlPattern);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var routes = ['/', '/g/:gistId']; /**
-                                   * index.js
-                                   *
-                                   * (C) 2017 mobile.de GmbH
-                                   *
-                                   * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
-                                   * @since 09 Feb 2017
-                                   */
+var expressStaticGzip = __webpack_require__(11); /**
+                                                         * index.js
+                                                         *
+                                                         * (C) 2017 mobile.de GmbH
+                                                         *
+                                                         * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
+                                                         * @since 09 Feb 2017
+                                                         */
 /* eslint-disable no-console */
+
+var routes = ['/', '/g/:gistId'];
 
 _sourceMapSupport2.default.install();
 
 var app = (0, _express2.default)();
-app.use('/static', _express2.default.static('./dist'));
+app.use('/static', expressStaticGzip('./dist'));
 
 app.get('/cool', function (request, response) {
     response.send((0, _coolAsciiFaces2.default)());
@@ -727,7 +735,7 @@ app.listen(process.env.PORT || 3000, function () {
 });
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -769,7 +777,7 @@ var Home = function Home() {
 exports.default = Home;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -812,7 +820,7 @@ var Main = function Main(_ref) {
 exports.default = Main;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -853,7 +861,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -888,13 +896,13 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types");
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
