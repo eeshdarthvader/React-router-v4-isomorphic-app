@@ -9,6 +9,12 @@
 const path = require('path');
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
+const devTools = "cheap-module-source-map";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+
 var webpack = require('webpack');
 
 module.exports = {
@@ -26,7 +32,30 @@ module.exports = {
         extensions: ['*', '.js', '.json']
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin({minimize: true})
+      new webpack.optimize.UglifyJsPlugin({
+    output: {
+      comments: false
+    },
+    mangle: true,
+    debug: false,
+    minimize: true,
+    compress: {
+      warnings: false,
+      screw_ie8: true,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true
+    },
+    sourceMap: devTools && (devTools.indexOf("sourcemap") >= 0 || devTools.indexOf("source-map") >= 0)
+  }),
+      new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.optimize.AggressiveMergingPlugin()
+ 
     ],
     module: {
 	    loaders: [

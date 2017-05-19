@@ -2,8 +2,10 @@
   "presets": [
     [
       "latest",
-      { "modules": false }
+      { "modules": false ,"loose": true}
     ],
     "react"
   ]
 }
+
+
