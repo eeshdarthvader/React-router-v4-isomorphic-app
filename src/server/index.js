@@ -20,6 +20,7 @@ import render from './render';
 import renderPlayers from './renderPlayers';
 import fetch from 'node-fetch';
 import { renderToString } from 'react-dom/server';
+import cool from 'cool-ascii-faces';
 
 
 import { matchRoutes, renderRoutes } from 'react-router-config'
@@ -37,6 +38,11 @@ sourceMapSupport.install();
 
 const app = express();
 app.use('/static', express.static('./dist'));
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
+
 
 
 app.get('/api/matches/:id',(req,res) =>{
