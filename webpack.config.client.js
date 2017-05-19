@@ -9,6 +9,7 @@
 const path = require('path');
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
+var webpack = require('webpack');
 
 module.exports = {
     context: srcPath,
@@ -17,13 +18,16 @@ module.exports = {
     entry: './client/index.js',
     output: {
         path: distPath,
-        filename: 'client.js',
+        filename: 'client.min.js',
         publicPath: '/'
     },
     resolve: {
         modules: ['node_modules', 'src'],
         extensions: ['*', '.js', '.json']
     },
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({minimize: true})
+    ],
     module: {
 	    loaders: [
 	      {

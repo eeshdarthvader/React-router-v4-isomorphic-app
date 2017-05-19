@@ -27,7 +27,7 @@ export default (renderMe, gists,players='') => `<!DOCTYPE html>
         ${gists ? `
             <script>window.__gists__ = ${JSON.stringify(gists)};</script>
             <script>window.__players__ = ${JSON.stringify(players)};</script>
-            <script src="/static/client.js"></script>
+            <script src="/static/client.min.js"></script>
         ` : ''}
     </body>
 </html>`;
