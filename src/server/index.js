@@ -46,11 +46,11 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-app.get('*.js', function (req, res) {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
+// app.get('*.js', function (req, res) {
+//   req.url = req.url + '.gz';
+//   res.set('Content-Encoding', 'gzip');
   
-});
+// });
 
 app.get('/api/matches/:id',(req,res) =>{
 	

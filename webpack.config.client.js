@@ -14,6 +14,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+ 
 
 
 var webpack = require('webpack');
@@ -38,6 +41,12 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
+    new BundleAnalyzerPlugin({
+            analyzerMode: 'static'
+        })
+
+
+    ,
      new webpack.optimize.DedupePlugin(),
      new CompressionPlugin({   
       asset: "[path].gz[query]",
@@ -77,7 +86,7 @@ module.exports = {
 	        loader: 'babel-loader',
 	        exclude: /node_modules/,
 	        query: {
-	          presets: ['es2015', 'react']
+	          presets: ['es2015', 'react','stage-0']
 	        }
 	      },
 	      { 

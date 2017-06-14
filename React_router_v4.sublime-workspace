@@ -1,0 +1,398 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"compo",
+				"componentWillMount\t Life Cycle"
+			],
+			[
+				"plaer",
+				"players"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"get",
+				"get\tGet Elements"
+			],
+			[
+				"Comp",
+				"componentDidMount\t Life Cycle"
+			],
+			[
+				"Com",
+				"componentWillMount\t Life Cycle"
+			],
+			[
+				"comp",
+				"componentWillMount\t Life Cycle"
+			],
+			[
+				"image",
+				"imageStyle"
+			],
+			[
+				"is",
+				"isRequired"
+			],
+			[
+				"React",
+				"React.PropTypes.array"
+			],
+			[
+				"author",
+				"authors"
+			],
+			[
+				"Auth",
+				"AuthorApi"
+			],
+			[
+				"re",
+				"render()\tReactDOM"
+			],
+			[
+				"r",
+				"react"
+			],
+			[
+				"main",
+				"mainJs"
+			],
+			[
+				"browser",
+				"browserify"
+			],
+			[
+				"d",
+				"dist"
+			],
+			[
+				"b",
+				"devBaseUrl"
+			],
+			[
+				"web",
+				"webpack-dev-server"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "webpack.config.client.js",
+			"settings":
+			{
+				"buffer_size": 3146,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 147.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/eeshtyagi/Downloads/react-router-4-master"
+	],
+	"file_history":
+	[
+		"/Users/eeshtyagi/Desktop/AMP/index.html",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/Gist.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/Home.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/Main.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/Routes.js",
+		"/Users/eeshtyagi/Desktop/locals-web_v2/public/styles/local.css",
+		"/Users/eeshtyagi/Desktop/locals-web/public/styles/local.css",
+		"/Users/eeshtyagi/Desktop/Cleartrip UI/ct-html/flightstatic/index.shtml",
+		"/Users/eeshtyagi/Desktop/Cleartrip UI/ct-html/flightstatic/index_fl.shtml",
+		"/Users/eeshtyagi/Desktop/Cleartrip/cleartripbuild.sublime-workspace",
+		"/Users/eeshtyagi/Desktop/Cleartrip UI/ct-html/javascripts/build/tools/uiBuild.sh",
+		"/Users/eeshtyagi/Desktop/locals-web/local_cities.json",
+		"/Users/eeshtyagi/Desktop/locals-web/extFiles/libs/fetchCitiesList.js",
+		"/Users/eeshtyagi/Desktop/locals-web/app/templates/__layout.hbs",
+		"/Users/eeshtyagi/Desktop/locals-web/app/controllers/route_controller.js",
+		"/Users/eeshtyagi/Desktop/Cleartrip UI/html-templates/properties",
+		"/Users/eeshtyagi/Desktop/locals-web/app/controllers/ttd_controller.js",
+		"/Users/eeshtyagi/Desktop/locals-web/app/app.js",
+		"/Users/eeshtyagi/Desktop/locals-web/locals-web.sh",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/.gitignore",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/favicon/favicons.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/dist/public/images/glyphicons-halflings-regular.svg",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/.babelrc",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/webpack.config.server.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/dist/client.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/App.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/shared/Error.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/server/index.js",
+		"/Users/eeshtyagi/Downloads/react-router-4-master/src/server/render.js",
+		"/Users/eeshtyagi/Downloads/arc-master/src/components/pages/HomePage/index.js",
+		"/Users/eeshtyagi/Desktop/react-universal-blog/root.js",
+		"/Users/eeshtyagi/Desktop/react-universal-blog/routingContext.js",
+		"/Users/eeshtyagi/Downloads/universal-react-example-master/server.js",
+		"/Users/eeshtyagi/Downloads/universal-react-example-master/views/index.ejs",
+		"/Users/eeshtyagi/Desktop/judo heroes/package.json",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/AtheletesMenu.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/NotFoundPage.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/AthletesPage.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/Flag.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/Medal.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/AthletesPreview.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/Layout.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/components/Index.js",
+		"/Users/eeshtyagi/Desktop/judo heroes/src/css/style.css",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/common/header.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/app.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/api/authorData.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/api/authorApi.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/locals/localsPage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/common/footer.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/locals/localsList.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/api/localsData.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/api/localsApi.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/notFoundPage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/package.json",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/author/authorPage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/gulpfile.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/author/authorList.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/locals/localsCategory.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/css/style.css",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/index.html",
+		"/Users/eeshtyagi/Desktop/React POC ES5/bundle.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/eslint.config.json",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/about/aboutPage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/routes.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/about/authorPage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/src/components/homepage.js",
+		"/Users/eeshtyagi/Desktop/React POC ES5/dist/index.html",
+		"/Users/eeshtyagi/Desktop/Eesh PoC's/package.json",
+		"/Users/eeshtyagi/Desktop/Eesh PoC's/webpack.config.js",
+		"/Users/eeshtyagi/Desktop/Eesh PoC's/index.html",
+		"/Users/eeshtyagi/Desktop/Eesh PoC's/App.jsx",
+		"/Users/eeshtyagi/Desktop/Eesh PoC's/main.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"NormalModuleReplacementPlugin",
+			"collectionListingWrapper",
+			"versionInstance",
+			"Preparing to fetch ttd model from ajax call",
+			"jso",
+			"local_cities",
+			"locals_cities",
+			"min.",
+			"local",
+			"wlCheck",
+			"getWlConfig",
+			"callback",
+			"wlCheck",
+			"signin",
+			"getWlConfig",
+			"getHostName",
+			"whitelabel",
+			"presets",
+			"//"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/eeshtyagi/Downloads/react-router-4-master"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "webpack.config.client.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JSX/JSX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"indexfl",
+				"ct-html/flightstatic/index_fl.shtml"
+			],
+			[
+				"head.shtm",
+				"ct-html/flightstatic/includes/head.shtml"
+			],
+			[
+				"__",
+				"app/templates/__layout.hbs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -10,10 +10,23 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import SidebarItem from './SidebarItem';
 import Main from './Main';
-import Gist from './Gist';
-import Home from './Home';
+import asyncComponent from './asyncComponent';
+ 
+ //import Gist from './Gist';
+
+ //import Home from './Home';
+
+
+const Home = asyncComponent(() => import('./Home')
+  .then(module => module.default), { name: 'Home' });
+
+const Gist = asyncComponent(() => import('./Gist')
+  .then(module => module.default), { name: 'Gist' });
+
+
 import { Link, Route } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
+import Async from 'react-code-splitting'
 
 const style = {
     display: 'flex',

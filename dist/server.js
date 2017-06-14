@@ -2,6 +2,12 @@
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
+/******/ 	// object to store loaded chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	var installedChunks = {
+/******/ 		1: 0
+/******/ 	};
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
@@ -26,6 +32,21 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] !== 0) {
+/******/ 			var chunk = require("./" + chunkId + ".server.js");
+/******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
+/******/ 			for(var moduleId in moreModules) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 			for(var i = 0; i < chunkIds.length; i++)
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 		}
+/******/ 		return Promise.resolve();
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -61,6 +82,13 @@
 /******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// uncatched error handler for webpack runtime
+/******/ 	__webpack_require__.oe = function(err) {
+/******/ 		process.nextTick(function() {
+/******/ 			throw err; // catch this error by using System.import().catch()
+/******/ 		});
+/******/ 	};
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 17);
@@ -254,12 +282,6 @@ exports.default = Gist;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,7 +313,7 @@ exports.default = function (renderMe, gists) {
 };
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -322,7 +344,7 @@ exports.default = function (renderMe, players) {
 };
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -338,29 +360,29 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Sidebar = __webpack_require__(20);
+var _Sidebar = __webpack_require__(19);
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-var _SidebarItem = __webpack_require__(21);
+var _SidebarItem = __webpack_require__(20);
 
 var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
 
-var _Main = __webpack_require__(19);
+var _Main = __webpack_require__(18);
 
 var _Main2 = _interopRequireDefault(_Main);
 
-var _Gist = __webpack_require__(2);
+var _asyncComponent = __webpack_require__(21);
 
-var _Gist2 = _interopRequireDefault(_Gist);
+var _asyncComponent2 = _interopRequireDefault(_asyncComponent);
 
-var _Home = __webpack_require__(18);
+var _reactRouterDom = __webpack_require__(24);
 
-var _Home2 = _interopRequireDefault(_Home);
+var _reactBootstrap = __webpack_require__(16);
 
-var _reactRouterDom = __webpack_require__(23);
+var _reactCodeSplitting = __webpack_require__(23);
 
-var _reactBootstrap = __webpack_require__(3);
+var _reactCodeSplitting2 = _interopRequireDefault(_reactCodeSplitting);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -377,6 +399,23 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * @since 09 Feb 2017
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
+
+//import Gist from './Gist';
+
+//import Home from './Home';
+
+
+var Home = (0, _asyncComponent2.default)(function () {
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 25)).then(function (module) {
+        return module.default;
+    });
+}, { name: 'Home' });
+
+var Gist = (0, _asyncComponent2.default)(function () {
+    return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 2)).then(function (module) {
+        return module.default;
+    });
+}, { name: 'Gist' });
 
 var style = {
     display: 'flex',
@@ -423,10 +462,10 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     _Main2.default,
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _Home2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: Home }),
                     this.props.gists && _react2.default.createElement(_reactRouterDom.Route, { path: '/g/:gistId', render: function render(_ref) {
                             var match = _ref.match;
-                            return _react2.default.createElement(_Gist2.default, { players: _this2.props.players, gist: _this2.props.gists.teams.find(function (g) {
+                            return _react2.default.createElement(Gist, { players: _this2.props.players, gist: _this2.props.gists.teams.find(function (g) {
                                     return g._links.self.href.substring(g._links.self.href.lastIndexOf('/') + 1) === match.params.gistId;
                                 }) });
                         } })
@@ -441,7 +480,7 @@ var App = function (_React$Component) {
 exports.default = App;
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -486,7 +525,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -531,52 +570,58 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = require("cool-ascii-faces");
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-static-gzip");
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("node-fetch");
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-config");
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("source-map-support");
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("url-pattern");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap");
 
 /***/ }),
 /* 17 */
@@ -585,7 +630,7 @@ module.exports = require("url-pattern");
 "use strict";
 
 
-var _express = __webpack_require__(10);
+var _express = __webpack_require__(9);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -593,7 +638,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _App = __webpack_require__(6);
+var _App = __webpack_require__(5);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -601,47 +646,47 @@ var _Gist = __webpack_require__(2);
 
 var _Gist2 = _interopRequireDefault(_Gist);
 
-var _NoMatch = __webpack_require__(8);
+var _NoMatch = __webpack_require__(7);
 
 var _NoMatch2 = _interopRequireDefault(_NoMatch);
 
-var _Error = __webpack_require__(7);
+var _Error = __webpack_require__(6);
 
 var _Error2 = _interopRequireDefault(_Error);
 
-var _reactRouter = __webpack_require__(13);
+var _reactRouter = __webpack_require__(12);
 
-var _sourceMapSupport = __webpack_require__(15);
+var _sourceMapSupport = __webpack_require__(14);
 
 var _sourceMapSupport2 = _interopRequireDefault(_sourceMapSupport);
 
-var _render = __webpack_require__(4);
+var _render = __webpack_require__(3);
 
 var _render2 = _interopRequireDefault(_render);
 
-var _renderPlayers = __webpack_require__(5);
+var _renderPlayers = __webpack_require__(4);
 
 var _renderPlayers2 = _interopRequireDefault(_renderPlayers);
 
-var _nodeFetch = __webpack_require__(12);
+var _nodeFetch = __webpack_require__(11);
 
 var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
 var _server = __webpack_require__(1);
 
-var _coolAsciiFaces = __webpack_require__(9);
+var _coolAsciiFaces = __webpack_require__(8);
 
 var _coolAsciiFaces2 = _interopRequireDefault(_coolAsciiFaces);
 
-var _reactRouterConfig = __webpack_require__(14);
+var _reactRouterConfig = __webpack_require__(13);
 
-var _urlPattern = __webpack_require__(16);
+var _urlPattern = __webpack_require__(15);
 
 var _urlPattern2 = _interopRequireDefault(_urlPattern);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var expressStaticGzip = __webpack_require__(11); /**
+var expressStaticGzip = __webpack_require__(10); /**
                                                          * index.js
                                                          *
                                                          * (C) 2017 mobile.de GmbH
@@ -664,10 +709,11 @@ app.get('/cool', function (request, response) {
     response.send((0, _coolAsciiFaces2.default)());
 });
 
-app.get('*.js', function (req, res) {
-    req.url = req.url + '.gz';
-    res.set('Content-Encoding', 'gzip');
-});
+// app.get('*.js', function (req, res) {
+//   req.url = req.url + '.gz';
+//   res.set('Content-Encoding', 'gzip');
+
+// });
 
 app.get('/api/matches/:id', function (req, res) {
 
@@ -751,48 +797,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactBootstrap = __webpack_require__(3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Home.js
- *
- * (C) 2017 mobile.de GmbH
- *
- * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
- * @since 09 Feb 2017
- */
-var style = {
-  textAlign: "center"
-};
-
-var Home = function Home() {
-
-  return _react2.default.createElement(
-    'h1',
-    { style: style },
-    _react2.default.createElement('img', { src: '/images/epl.jpeg' })
-  );
-};
-
-exports.default = Home;
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var style = {
@@ -822,7 +826,7 @@ var Main = function Main(_ref) {
 exports.default = Main;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -863,7 +867,7 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -898,6 +902,76 @@ exports.default = function (_ref) {
 };
 
 /***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // asyncComponent.js
+
+
+exports.default = function (loader, collection) {
+  return function (_React$Component) {
+    _inherits(AsyncComponent, _React$Component);
+
+    function AsyncComponent(props) {
+      _classCallCheck(this, AsyncComponent);
+
+      var _this = _possibleConstructorReturn(this, (AsyncComponent.__proto__ || Object.getPrototypeOf(AsyncComponent)).call(this, props));
+
+      _this.Component = null;
+      _this.state = { Component: AsyncComponent.Component };
+      return _this;
+    }
+
+    _createClass(AsyncComponent, [{
+      key: 'componentWillMount',
+      value: function componentWillMount() {
+        var _this2 = this;
+
+        if (!this.state.Component) {
+          loader().then(function (Component) {
+            AsyncComponent.Component = Component;
+
+            _this2.setState({ Component: Component });
+          });
+        }
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        if (this.state.Component) {
+          return _react2.default.createElement(this.state.Component, _extends({}, this.props, collection));
+        }
+
+        return null;
+      }
+    }]);
+
+    return AsyncComponent;
+  }(_react2.default.Component);
+};
+
+/***/ }),
 /* 22 */
 /***/ (function(module, exports) {
 
@@ -905,6 +979,12 @@ module.exports = require("prop-types");
 
 /***/ }),
 /* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-code-splitting");
+
+/***/ }),
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");

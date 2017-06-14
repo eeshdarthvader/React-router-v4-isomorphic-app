@@ -15,9 +15,9 @@ const style = {
     textAlign:"center"
 };
 
-const Home = () => {
+const Home = (props) => {
 
-	return(<h1 style={style}><img src="/images/epl.jpeg" /></h1>);
+	return(<h1 style={style}>{props.name}</h1>);
 }
 
 export default Home;
